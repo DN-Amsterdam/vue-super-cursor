@@ -130,4 +130,4 @@ body {
 ```
 
 ## Questions & contributing
-For questions, contact Gerben at gerben@digitalnatives.nl 
+For questions, contact Gerben at gerben@digitalnatives.nl || Koos at koos@digitalnatives.nl
