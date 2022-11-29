@@ -3,7 +3,7 @@ A flexible library for adding custom (super) cursors to your vue/nuxt apps. Flex
 
 ## Installation
 ```bash
-yarn add @digital-natives/vue-super-cursor
+yarn add @digitalnatives/vue-super-cursor
 ```
 
 ## Usage examples
@@ -23,7 +23,7 @@ yarn add @digital-natives/vue-super-cursor
 </template>
 
 <script>
-import SuperCursor from '@digital-natives/vue-super-cursor'
+import SuperCursor from '@digitalnatives/vue-super-cursor'
 
 export default {
     components: {
