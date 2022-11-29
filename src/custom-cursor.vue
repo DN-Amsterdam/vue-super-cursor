@@ -1,7 +1,7 @@
 <template>
   <div>
     <div ref="cursor" class="custom-cursor">
-      <slot />
+      <slot/>
     </div>
     <template v-if="trailingCursors.length">
       <div
@@ -9,7 +9,7 @@
           :key="index"
           class="custom-cursor-trail"
       >
-        <div :ref="index" :class="cursor.class" />
+        <div :ref="index" :class="cursor.class"/>
       </div>
     </template>
   </div>
@@ -18,8 +18,8 @@
 <script>
 'use strict';
 
-import { gsap } from 'gsap';
-import { throttle } from 'lodash';
+import {gsap} from 'gsap';
+import {throttle} from 'lodash';
 
 export default {
   name: 'CustomCursor',
@@ -70,6 +70,7 @@ export default {
   },
   destroyed() {
     this.mutationObserver.disconnect();
+
     window.removeEventListener('mousemove', this.updateCursor);
   },
   methods: {
@@ -100,7 +101,6 @@ export default {
       this.mutationObserver.observe(document, this.mutationObserverOptions);
     },
     selectHoverables() {
-      this.removeEventListeners();
       this?.hoverableElements?.forEach((select) => {
         this.hoverables = document.querySelectorAll(select.elements);
 

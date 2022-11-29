@@ -1,6 +1,6 @@
 body {
   * {
-    cursor: none;
+    cursor: none; // Hide the default cursor
   }
 
   .custom-cursor {
@@ -12,11 +12,11 @@ body {
   }
 
   @media ( hover: hover ) {
-    &:hover .custom-cursor {
+    &:hover .custom-cursor { // show the cursor when the cursor is inside the <body> element. Fade it out when it leaves the window
       opacity: 1;
     }
 
-    &:hover .custom-cursor-trail {
+    &:hover .custom-cursor-trail { // do the same for the cursor trail
       opacity: 1;
     }
   }
