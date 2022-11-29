@@ -1,9 +1,9 @@
-# Digital Natives - Custom-Cursor
-A flexible library for adding custom cursors to your vue/nuxt apps. Flexible configuration, good browser support and some built in solutions to common problems.
+# Digital Natives - Vue-Super-Cursor
+A flexible library for adding custom (super) cursors to your vue/nuxt apps. Flexible configuration, good browser support and some built in solutions to common problems.
 
 ## Installation
 ```bash
-yarn add @digital-natives/custom-cursor
+yarn add @digital-natives/vue-super-cursor
 ```
 
 ## Usage examples
@@ -12,22 +12,22 @@ yarn add @digital-natives/custom-cursor
 <template>
     <div>
         <!-- default -->
-        <CustomCursor />
+        <SuperCursor />
         
         <!-- use custom element as cursor -->
-        <CustomCursor>
-            <svg>....</svg
-        </CustomCursor>
+        <SuperCursor>
+            <svg>....</svg>
+        </SuperCursor>
        
     </div>
 </template>
 
 <script>
-import CustomCursor from '@digital-natives/custom-cursor'
+import SuperCursor from '@digital-natives/vue-super-cursor'
 
 export default {
     components: {
-        CustomCursor
+      SuperCursor
     }
 }
 </script>
@@ -40,35 +40,35 @@ The component is configurable through props.
 | Prop                  | Type   | Required   | Description                                                                                                                            | Object variables        | Default value                                                                                                 |
 |---------------------------|--------|------------|----------------------------------------------------------------------------------------------------------------------------------------|-------------------------|---------------------------------------------------------------------------------------------------------------|
 | `throttleDelay`                | Number | _optional_ | Throttle how often the mutationObserver will fire.                                                                | -                       | `500`                                                                                                         |
-| `hoverableElements`             | Array  | _optional_ | Array contains object with a `class` and `elements`                                                                                    | `class`, `elements`     | ```{ class: 'custom-cursor--hovering', elements: 'a, button' }```                                             |
+| `hoverableElements`             | Array  | _optional_ | Array contains object with a `class` and `elements`                                                                                    | `class`, `elements`     | ```{ class: 'super-cursor--hovering', elements: 'a, button' }```                                              |
 | `trailingCursors`        | Array  | _optional_ | Array contains object with a `class` and `gsap_options`. For Gsap options see the [docs](https://greensock.com/docs/v3/GSAP/gsap.to()) | `class`, `gsap_options` | `[]`                                                                                                          |                                                                                    
 | `mutationObserverOptions` | Object | _optional_ | Options see docs [MutationObserver](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe)                         | -                       | ``` { childList: true, subtree: true, attributes: true, characterData: false, attributeFilter: ['open'] } ``` |
 
 
 ## Hoverable elements
-The hoverable-elements prop lets you to add objects with a selector (elements) and a class. This allows you to define elements that will trigger an even when the cursor hovers over them. It also let's you set a class that will be added to the `<body>` when this happens. By default the cursor will trigger the class `.custom-cursor--hovering` on the `<body>` when you hover over `<button>` and `<a>` elements.
+The hoverable-elements prop lets you to add objects with a selector (elements) and a class. This allows you to define elements that will trigger an even when the cursor hovers over them. It also let's you set a class that will be added to the `<body>` when this happens. By default the cursor will trigger the class `.super-cursor--hovering` on the `<body>` when you hover over `<button>` and `<a>` elements.
 
 ### Example hoverable elements
 Let's assume you have a card that should have a different cursor. You could add the hoverable like so:
 ```vue
-<CustomCursor :hoverable-elements="[
+<SuperCursor :hoverable-elements="[
     {
-        class: 'custom-cursor--hovering', // keep the default in tact
+        class: 'super-cursor--hovering', // keep the default in tact
         elements: 'a, button'
     },
     {
-        class: 'custom-cursor--hover-card',
+        class: 'super-cursor--hover-card',
         elements: '.card' // select your card with a class selector
     }
 ]" />
 ```
 
-The class `.custom-cursor--hover-card` will now be added to the body when you hover over one of the cards.
+The class `.super-cursor--hover-card` will now be added to the body when you hover over one of the cards.
 
 You can then style the cursor however you like
 
 ```css
-body.custom-cursor--hover-card .custom-cursor {
+body.super-cursor--hover-card .super-cursor {
     background: magenta;
 }
 ```
@@ -84,9 +84,9 @@ The trailing cursors prop allows you to add additional trailing cursors with the
 
 Add one like so:
 ```vue
-<CustomCursor :trailing-cursors="[
+<SuperCursor :trailing-cursors="[
     {
-        class: 'custom-cursor--trailing', // the class the cursor will have
+        class: 'super-cursor--trailing', // the class the cursor will have
         gsap_options: { // Greensock options
             duration: 0.1
         }
@@ -104,26 +104,26 @@ body {
     cursor: none; // Hide the default cursor
   }
 
-  .custom-cursor {
+  .super-cursor {
     opacity: 0;
   }
 
-  .custom-cursor-trail {
+  .super-cursor-trail {
     opacity: 0;
   }
 
   @media ( hover: hover ) {
-    &:hover .custom-cursor { // show the cursor when the cursor is inside the <body> element. Fade it out when it leaves the window
+    &:hover .super-cursor { // show the cursor when the cursor is inside the <body> element. Fade it out when it leaves the window
       opacity: 1;
     }
 
-    &:hover .custom-cursor-trail { // do the same for the cursor trail
+    &:hover .super-cursor-trail { // do the same for the cursor trail
       opacity: 1;
     }
   }
 }
 
-.custom-cursor {
+.super-cursor {
   position: fixed;
   opacity: 0;
   pointer-events: none;
@@ -135,7 +135,7 @@ body {
   border-radius: 50%;
 }
 
-.custom-cursor-trail {
+.super-cursor-trail {
   opacity: 0;
 }
 ```

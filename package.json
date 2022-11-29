@@ -1,20 +1,20 @@
 {
-    "name": "@digital-natives/custom-cursor",
+    "name": "@digital-natives/vue-super-cursor",
     "license": "MIT",
     "version": "1.0.0",
     "repository": "",
     "author": "Gerben Op den Kamp <gerben@digitalnatives.nl> and Koos Bavink <koos@digitalnatives.nl>",
-    "main": "dist/custom-cursor.umd.js",
-    "module": "dist/custom-cursor.esm.js",
-    "unpkg": "dist/custom-cursor.min.js",
+    "main": "dist/vue-super-cursor.umd.js",
+    "module": "dist/vue-super-cursor.esm.js",
+    "unpkg": "dist/vue-super-cursor.min.js",
     "browser": {
-        "./sfc": "src/custom-cursor.vue"
+        "./sfc": "src/super-cursor.vue"
     },
     "scripts": {
         "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
-        "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/custom-cursor.umd.js",
-        "build:es": "rollup --config build/rollup.config.js --format es --file dist/custom-cursor.esm.js",
-        "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/custom-cursor.min.js"
+        "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-super-cursor.umd.js",
+        "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-super-cursor.esm.js",
+        "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-super-cursor.min.js"
     },
     "files": [
         "dist",

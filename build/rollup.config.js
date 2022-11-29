@@ -5,7 +5,7 @@ export default {
     external: ['gsap', 'lodash'],
     output: {
         format: 'cjs',
-        name: 'customCursor',
+        name: 'superCursor',
         exports: 'named',
         globals: {
             'gsap': 'gsap',

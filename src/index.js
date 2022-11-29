@@ -1,3 +1,3 @@
-import customCursor from './custom-cursor.vue';
+import superCursor from './super-cursor.vue';
 
-export default customCursor;
+export default superCursor;

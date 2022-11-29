@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div ref="cursor" class="custom-cursor">
+    <div ref="cursor" class="super-cursor">
       <slot/>
     </div>
     <template v-if="trailingCursors.length">
       <div
           v-for="(cursor, index) in trailingCursors"
           :key="index"
-          class="custom-cursor-trail"
+          class="super-cursor-trail"
       >
         <div :ref="index" :class="cursor.class"/>
       </div>
@@ -22,7 +22,7 @@ import {gsap} from 'gsap';
 import {throttle} from 'lodash';
 
 export default {
-  name: 'CustomCursor',
+  name: 'SuperCursor',
   props: {
     throttleDelay: {
       type: Number,
@@ -32,7 +32,7 @@ export default {
       type: Array,
       default: () => [
         {
-          class: 'custom-cursor--hovering',
+          class: 'super-cursor--hovering',
           elements: 'a, button'
         }
       ]
@@ -62,7 +62,7 @@ export default {
     };
   },
   mounted() {
-    this.InitCustomCursor();
+    this.InitSuperCursor();
     this.observeHTML();
   },
   created() {
@@ -74,7 +74,7 @@ export default {
     window.removeEventListener('mousemove', this.updateCursor);
   },
   methods: {
-    InitCustomCursor() {
+    InitSuperCursor() {
       this.selectHoverables();
 
       window.addEventListener('mousemove', this.updateCursor);
@@ -118,4 +118,4 @@ export default {
 };
 </script>
 
-<style lang="less" src="./custom-cursor.less"></style>
+<style lang="less" src="./super-cursor.less"></style>

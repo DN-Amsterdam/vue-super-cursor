@@ -3,26 +3,26 @@ body {
     cursor: none; // Hide the default cursor
   }
 
-  .custom-cursor {
+  .super-cursor {
     opacity: 0;
   }
 
-  .custom-cursor-trail {
+  .super-cursor-trail {
     opacity: 0;
   }
 
   @media ( hover: hover ) {
-    &:hover .custom-cursor { // show the cursor when the cursor is inside the <body> element. Fade it out when it leaves the window
+    &:hover .super-cursor { // show the cursor when the cursor is inside the <body> element. Fade it out when it leaves the window
       opacity: 1;
     }
 
-    &:hover .custom-cursor-trail { // do the same for the cursor trail
+    &:hover .super-cursor-trail { // do the same for the cursor trail
       opacity: 1;
     }
   }
 }
 
-.custom-cursor {
+.super-cursor {
   position: fixed;
   opacity: 0;
   pointer-events: none;
@@ -34,6 +34,6 @@ body {
   border-radius: 50%;
 }
 
-.custom-cursor-trail {
+.super-cursor-trail {
   opacity: 0;
 }
