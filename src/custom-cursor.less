@@ -1,0 +1,39 @@
+body {
+  * {
+    cursor: none;
+  }
+
+  .custom-cursor {
+    opacity: 0;
+  }
+
+  .custom-cursor-trail {
+    opacity: 0;
+  }
+
+  @media ( hover: hover ) {
+    &:hover .custom-cursor {
+      opacity: 1;
+    }
+
+    &:hover .custom-cursor-trail {
+      opacity: 1;
+    }
+  }
+}
+
+.custom-cursor {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  height: 25px;
+  width: 25px;
+  background-color: #000;
+  z-index: 2147483647;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.custom-cursor-trail {
+  opacity: 0;
+}
