@@ -18,6 +18,11 @@ yarn add @digitalnatives/vue-super-cursor
         <SuperCursor>
             <svg>....</svg>
         </SuperCursor>
+
+        <!-- Nuxt usage, prevents error on initial page load  -->
+        <client-only>
+            <SuperCursor />
+        </client-only>
        
     </div>
 </template>
