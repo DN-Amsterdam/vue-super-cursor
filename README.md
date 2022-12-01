@@ -51,7 +51,7 @@ The component is configurable through props.
 
 
 ## Hoverable elements
-The hoverable-elements prop lets you to add objects with a selector (elements) and a class. This allows you to define elements that will trigger an even when the cursor hovers over them. It also let's you set a class that will be added to the `<body>` when this happens. By default the cursor will trigger the class `.super-cursor--hovering` on the `<body>` when you hover over `<button>` and `<a>` elements.
+The hoverable-elements prop lets you to add objects with a selector (elements) and a class. This allows you to define elements that will trigger an event when the cursor hovers over them. It also let's you set a class that will be added to the `<body>` when this happens. By default the cursor will trigger the class `.super-cursor--hovering` on the `<body>` when you hover over `<button>` and `<a>` elements.
 
 ### Example hoverable elements
 Let's assume you have a card that should have a different cursor. You could add the hoverable like so:
