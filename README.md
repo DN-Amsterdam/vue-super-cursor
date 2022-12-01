@@ -1,5 +1,5 @@
-# Digital Natives - Vue-Super-Cursor
-A flexible library for adding custom (super) cursors to your vue/nuxt apps. Flexible configuration, good browser support and some built in solutions to common problems.
+# Vue Super Cursor - Vue 2
+A flexible library for adding custom (super) cursors to your vue/nuxt 2 apps. Flexible configuration, good browser support and some built in solutions to common problems.
 
 ## Installation
 ```bash
@@ -149,4 +149,6 @@ body {
 Feel welcome to open issues if you have questions are if you run into bugs.
 
 Or even better submit a pull request :)
+
+Made by [Digital Natives Amsterdam](https://www.digitalnatives.nl/)
 

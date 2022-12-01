@@ -18,8 +18,8 @@
 <script>
 'use strict';
 
-import {gsap} from 'gsap';
-import {throttle} from 'lodash';
+import { gsap } from 'gsap';
+import { throttle, get } from 'lodash';
 
 export default {
   name: 'SuperCursor',
@@ -66,7 +66,7 @@ export default {
     this.observeHTML();
   },
   created() {
-    this.throttledSelectHoverables = throttle(this.selectHoverables, this?.throttleDelay);
+    this.throttledSelectHoverables = throttle(this.selectHoverables, this.throttleDelay);
   },
   destroyed() {
     this.mutationObserver.disconnect();
@@ -86,11 +86,11 @@ export default {
         left: e.clientX
       });
 
-      this?.trailingCursors?.forEach((cursor, index) => {
+      this.trailingCursors.forEach((cursor, index) => {
         gsap.to(this.$refs[index], Object.assign({
           top: e.clientY,
           left: e.clientX
-        }, cursor?.gsap_options));
+        }, get(cursor,'gsap_options', {})));
       });
     },
     observeHTML() {
@@ -101,7 +101,7 @@ export default {
       this.mutationObserver.observe(document, this.mutationObserverOptions);
     },
     selectHoverables() {
-      this?.hoverableElements?.forEach((select) => {
+      this.hoverableElements.forEach((select) => {
         this.hoverables = document.querySelectorAll(select.elements);
 
         this.hoverables.forEach((hoverable) => {

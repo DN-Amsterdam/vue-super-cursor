@@ -1,7 +1,7 @@
 {
     "name": "@digitalnatives/vue-super-cursor",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "repository": "git@github.com:DN-Amsterdam/vue-super-cursor.git",
     "author": "Gerben Op den Kamp <gerben@digitalnatives.nl> and Koos Bavink <koos@digitalnatives.nl>",
     "main": "dist/vue-super-cursor.umd.js",
@@ -21,17 +21,17 @@
         "src"
     ],
     "devDependencies": {
+        "@rollup/plugin-buble": "^1.0.1",
         "@rollup/plugin-commonjs": "^11.1.0",
-        "@rollup/plugin-babel": "^6.0.3",
-        "@babel/core": "^7.17.8",
-        "gsap": "^3.11.3",
+        "rollup-plugin-uglify": "^6.0.4",
         "rollup": "^1.17.0",
         "rollup-plugin-vue": "^5.0.1",
-        "vue": "^2.6.11",
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "lodash": "^4.17.21"
+        "gsap": "^3.11.3",
+        "lodash": "^4.17.21",
+        "vue": "^2.0.0"
     },
     "description": "A flexible library for adding custom (super) cursors to your vue/nuxt apps. "
 }

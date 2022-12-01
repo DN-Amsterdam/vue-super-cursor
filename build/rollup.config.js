@@ -1,13 +1,14 @@
 import commonjs from '@rollup/plugin-commonjs'; // Convert CommonJS modules to ES6
 import vue from 'rollup-plugin-vue'; // Handle .vue SFC files
-import babel from '@rollup/plugin-babel'
+import buble from '@rollup/plugin-buble';
+import { uglify } from 'rollup-plugin-uglify';
 
 export default {
     input: 'src/wrapper.js', // Path relative to package.json
     external: ['gsap', 'lodash'],
     output: {
         name: 'superCursor',
-        format: 'cjs',
+        format: 'iife',
         exports: 'named',
         globals: {
             'gsap': 'gsap',
@@ -16,10 +17,10 @@ export default {
     },
     plugins: [
         commonjs(),
+        uglify(),
         vue({
             css: true, // Dynamically inject css as a <style> tag
-            compileTemplate: true, // Explicitly convert template to render function
         }),
-        babel({ babelHelpers: 'bundled' }), // Transpile to ES6
+        buble(), // Transpile to ES5
     ],
 };
